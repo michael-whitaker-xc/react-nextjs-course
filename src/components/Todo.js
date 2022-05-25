@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Backdrop from './Backdrop';
-import Modal from './Modal';
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
 
 function Todo(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -14,7 +14,6 @@ function Todo(props) {
     setModalIsOpen(false);
   }
 
-
   return (
     <div className="card">
       <h2>{props.text}</h2>
@@ -23,8 +22,9 @@ function Todo(props) {
           Delete
         </button>
       </div>
-      {modalIsOpen && <Modal/>}
-      {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
+      {/* this replaces ternary but saying, 'if the first is true and the second is true, return the second' */}
+      {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
+      {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </div>
   );
 }
