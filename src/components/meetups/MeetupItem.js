@@ -8,7 +8,7 @@ function MeetupItem(props) {
   const title = meetup.title;
   const address = meetup.address;
   const description = meetup.description;
-  const id = meetup.id;
+//   const id = meetup.id;
 
   return (
     <li className={classes.item}>
