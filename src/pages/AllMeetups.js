@@ -20,10 +20,16 @@ const DUMMY_DATA = [
 ];
 
 function AllMeetupsPage() {
-  return <section>
+  return (
+    <section>
       <h1>All Meetups</h1>
-      {[<li>Item1</li>,<li>Item2</li>]}
-  </section>;
+      <ul>
+        {DUMMY_DATA.map((meetup) => {
+          return <li>{meetup.title}</li>;
+        })}
+      </ul>
+    </section>
+  );
 }
 
 export default AllMeetupsPage;
